@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Baby Shower de Benjamin</title>
-<meta name="description" content="Pau y Cris te invitan al baby shower de Benjamin. Domingo 13 de diciembre de 2026, 2:30 p. m.">
+<title>Baby Shower · Pau y Cris</title>
+<meta name="description" content="Pau y Cris te invitan a su baby shower de superhéroes. Domingo 13 de diciembre de 2026, 2:30 p. m.">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Baby Shower de Benjamin">
+<meta property="og:title" content="Baby shower de superhéroes · Pau y Cris">
 <meta property="og:description" content="Pau y Cris te invitan con mucho cariño. Domingo 13 de diciembre, 2:30 p. m. Confirma tu asistencia aquí.">
 <meta property="og:image" content="https://cristian1829.github.io/baby-shower-benjamin/img/compartir.jpg">
 <meta property="og:image:width" content="1200">
@@ -118,6 +118,24 @@ textarea{min-height:88px;resize:vertical}
 .form-msg{font-weight:700;min-height:1.4em}
 .form-msg.err{color:#b23b2a}
 
+/* ---------- Revelación épica del nombre ---------- */
+.hero h1.anon{font-size:clamp(46px,12vw,92px)}
+.revelar{position:fixed;inset:0;z-index:50;display:grid;place-items:center;overflow:hidden;text-align:center;
+  background:radial-gradient(circle at 50% 45%, #2c6b4c 0%, #143826 45%, #08190f 100%);color:#fff;
+  padding:calc(24px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.rev-rayos{position:absolute;left:50%;top:45%;width:220vmax;height:220vmax;margin:-110vmax 0 0 -110vmax;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg, rgba(245,198,74,.20) 0deg 7deg, rgba(245,198,74,0) 7deg 18deg);
+  -webkit-mask-image:radial-gradient(circle, #000 0%, rgba(0,0,0,.6) 25%, transparent 60%);mask-image:radial-gradient(circle, #000 0%, rgba(0,0,0,.6) 25%, transparent 60%)}
+.rev-flash{position:absolute;inset:0;background:#fff8dc;opacity:0;pointer-events:none}
+.rev-centro{position:relative;display:grid;justify-items:center;gap:10px;max-width:100%}
+.rev-pre{position:absolute;top:50%;left:50%;width:min(90vw,520px);transform:translate(-50%,-50%);font:700 clamp(20px,5vw,28px)/1.3 var(--f-display);color:#fdf3c4}
+.rev-heroe{width:clamp(90px,22vw,140px);border-radius:50%;box-shadow:0 0 0 5px #f5c64a,0 0 40px rgba(245,198,74,.6)}
+.rev-nombre{font:800 clamp(62px,20vw,180px)/1 var(--f-display);letter-spacing:-.01em;margin:4px 0 0;color:#ffd84d;white-space:nowrap;
+  text-shadow:0 2px 0 #fff3b0,0 6px 0 #c2410c,0 10px 0 #7c2d12,0 18px 30px rgba(0,0,0,.55)}
+.rev-nombre .l{display:inline-block;will-change:transform}
+.rev-sub{font:800 clamp(24px,6.5vw,46px)/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.08em;color:#fff}
+.rev-fecha{font-size:clamp(15px,3.8vw,18px);color:#d9f0d0}
+.rev-centro .btn{margin-top:14px}
 .calma{max-width:34ch;margin:16px auto 0;font-size:15px;color:var(--tinta);background:rgba(255,253,245,.75);border-radius:14px;padding:10px 14px}
 .calma strong{color:var(--selva)}
 .tip-calma{margin-top:12px;background:#fff6d9;border-left:4px solid var(--banano);border-radius:10px;padding:10px 14px;font-size:15px;font-weight:600;color:var(--selva);max-width:62ch}
@@ -206,7 +224,7 @@ footer img{width:60px;margin:0 auto}
 <header class="hero">
   <div class="wrap">
     <span class="eyebrow">Baby shower de superhéroes</span>
-    <h1>Benjamin</h1>
+    <h1 id="titulo" class="anon"><span class="nb" data-real="Benjamin">¿Quién será?</span></h1>
   </div>
   <picture class="scene">
     <source srcset="img/heroes.webp" type="image/webp">
@@ -283,7 +301,7 @@ footer img{width:60px;margin:0 auto}
         </div>
       </div>
       <div>
-        <label for="r-msg">Un mensajito para Benjamin <span class="hint">(opcional)</span></label>
+        <label for="r-msg">Un mensajito para <span class="nb" data-real="Benjamin">el bebé</span> <span class="hint">(opcional)</span></label>
         <textarea id="r-msg" name="mensaje" maxlength="400" placeholder="Bienvenido al mundo, pequeño héroe…"></textarea>
       </div>
       <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
@@ -308,10 +326,10 @@ footer img{width:60px;margin:0 auto}
       <img class="face" src="img/cara-jirafa.webp" alt="">
       <div><div class="step-num">Paso 2 de 3</div><h2>Lista de regalos</h2></div>
     </div>
-    <p class="intro">Tu compañía es el mejor regalo. Si quieres traerle algo a Benjamin, elige aquí un regalo y su talla. Al apartarlo, desaparece de la lista para que nadie lo repita.</p>
+    <p class="intro">Tu compañía es el mejor regalo. Si quieres traerle algo <span class="nb" data-real="a Benjamin">al bebé</span>, elige aquí un regalo y su talla. Al apartarlo, desaparece de la lista para que nadie lo repita.</p>
     <div class="notice">
       <img class="face" src="img/escudo.webp" alt="">
-      <p><strong>Benjamin va a crecer rapidito.</strong> Por eso te pedimos que no le regales ropa de recién nacido (0 a 3 meses). Las tallas de ropa van de 3 meses en adelante.</p>
+      <p><strong><span class="nb" data-real="Benjamin">Nuestro bebé</span> va a crecer rapidito.</strong> Por eso te pedimos que no le regales ropa de recién nacido (0 a 3 meses). Las tallas de ropa van de 3 meses en adelante.</p>
     </div>
 
     <div class="panales" id="panales">
@@ -319,7 +337,7 @@ footer img{width:60px;margin:0 auto}
       <div class="pan-body">
         <span class="pan-k">Una idea, solo si te nace</span>
         <h3>¿Nos ayudas con un paquete de pañales?</h3>
-        <p>Benjamin va a usar muchísimos, así que un paquete de pañales siempre nos va a caer de maravilla, junto con tu regalo o en lugar de él. No es ningún compromiso: lo que más queremos es que vengas.</p>
+        <p><span class="nb" data-real="Benjamin">Nuestro bebé</span> va a usar muchísimos, así que un paquete de pañales siempre nos va a caer de maravilla, junto con tu regalo o en lugar de él. No es ningún compromiso: lo que más queremos es que vengas.</p>
 
         <div id="pan-elegir">
           <p class="pan-tip">Para que no lleguen todos de la misma talla, te sugerimos la etapa marcada. Si prefieres otra, elígela sin problema.</p>
@@ -344,7 +362,7 @@ footer img{width:60px;margin:0 auto}
     <div class="envelope">
       <img class="face" src="img/cara-loro.webp" alt="">
       <div class="env-body">
-        <p><strong>¿Prefieres la lluvia de sobres o una transferencia?</strong> También es bienvenida y no hace falta apartarla. Nos ayuda a comprar lo que Benjamin vaya necesitando.</p>
+        <p><strong>¿Prefieres la lluvia de sobres o una transferencia?</strong> También es bienvenida y no hace falta apartarla. Nos ayuda a comprar lo que <span class="nb" data-real="Benjamin">el bebé</span> vaya necesitando.</p>
         <div class="llave">
           <div>
             <span class="llave-k">Llave Bre-B</span>
@@ -384,11 +402,27 @@ footer img{width:60px;margin:0 auto}
 <footer>
   <img class="face" src="img/cara-leon.webp" alt="">
   <p>Con todo nuestro cariño,</p>
-  <div class="sign">Pau, Cris y Benjamin</div>
+  <div class="sign">Pau, Cris <span class="nb" data-real="y Benjamin">y nuestro pequeño héroe</span></div>
 </footer>
 
 <div class="demo" id="demo" hidden>Modo de prueba: los datos se guardan solo en este navegador</div>
 <div class="toast" id="toast" role="status" hidden></div>
+
+<div class="revelar" id="revelar" role="dialog" aria-modal="true" aria-label="Revelación del nombre" hidden>
+  <div class="rev-rayos" id="rev-rayos" aria-hidden="true"></div>
+  <div class="rev-flash" id="rev-flash" aria-hidden="true"></div>
+  <div class="rev-centro">
+    <p class="rev-pre" id="rev-pre">Un pequeño héroe tiene algo que decirte…</p>
+    <img class="rev-heroe" id="rev-heroe" src="img/cara-leon.webp" alt="">
+    <h2 class="rev-nombre" id="rev-nombre" aria-label="Benjamin"></h2>
+    <p class="rev-sub" id="rev-sub">te espera</p>
+    <p class="rev-fecha" id="rev-fecha">Domingo 13 de diciembre · 2:30 p. m.</p>
+    <button class="btn btn-main" type="button" id="rev-cerrar">¡Allá nos vemos!</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js"></script>
 
 <script>
 /* =========================================================
@@ -547,7 +581,7 @@ function mostrarGracias(rsvp) {
     $("#ok-texto").textContent = "Te esperamos el domingo 13 de diciembre a las 2:30 p. m. Abajo está la lista de regalos." + sinPrisa;
   } else {
     $("#ok-titulo").textContent = "Gracias por avisarnos, " + nombre;
-    $("#ok-texto").textContent = "Te vamos a extrañar. Si quieres, igual puedes apartar un detallito para Benjamin aquí abajo." + sinPrisa;
+    $("#ok-texto").textContent = "Te vamos a extrañar. Si quieres, igual puedes apartar un detallito para " + NOMBRE + " aquí abajo." + sinPrisa;
   }
 }
 
@@ -564,8 +598,11 @@ $("#v-seguir").addEventListener("click", () => {
   const nombre = $("#v-nombre").value.trim();
   if (nombre.length < 2) { $("#v-msg").textContent = "Escribe tu nombre para seguir."; $("#v-nombre").focus(); return; }
   guardado.set("invitado", nombre);
+  const nuevo = !yaRevelado();
+  aplicarNombre();
   mostrarRegreso(nombre); pintarPanales();
-  $("#regalos").scrollIntoView({ behavior: "smooth", block: "start" });
+  const ir = () => $("#regalos").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (nuevo) revelar(true).then(ir); else ir();
 });
 $("#v-nombre").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); $("#v-seguir").click(); } });
 
@@ -589,7 +626,9 @@ $("#rsvp-form").addEventListener("submit", async (e) => {
     guardado.set("rsvp", rsvp);
     guardado.set("invitado", rsvp.nombre);
     estado.textContent = "";
+    aplicarNombre();
     mostrarGracias(rsvp);
+    await revelar(asiste === "Sí");
     $("#rsvp-ok").scrollIntoView({ behavior: "smooth", block: "center" });
   } catch {
     estado.textContent = "No pudimos enviar tu respuesta. Revisa tu conexión e inténtalo de nuevo.";
@@ -677,7 +716,7 @@ function cajaConfirmar(t, unica) {
       mios.push({ codigo: r.codigo, id: t.id, regalo: t.regalo, talla: t.talla });
       guardado.set("mis_regalos", mios);
       seleccion = null;
-      toast("¡Listo! Apartaste " + t.regalo + (unica ? "" : " talla " + t.talla) + ". Gracias por consentir a Benjamin.");
+      toast("¡Listo! Apartaste " + t.regalo + (unica ? "" : " talla " + t.talla) + ". Gracias por consentir " + nb("a " + NOMBRE, "al bebé") + ".");
       await cargarRegalos();
     } catch { msg.textContent = "Sin conexión. Inténtalo de nuevo."; msg.className = "form-msg err"; ok.disabled = false; }
   } }, "Sí, yo lo regalo");
@@ -777,9 +816,9 @@ function enlaces() {
   const q = encodeURIComponent(EVENTO.direccion);
   $("#maps").href = "https://www.google.com/maps/search/?api=1&query=" + q;
   $("#waze").href = "https://waze.com/ul?q=" + q + "&navigate=yes";
-  const det = encodeURIComponent("Baby shower de Benjamin. Con cariño, Pau y Cris.");
+  const det = encodeURIComponent("Baby shower de " + nb(NOMBRE, "nuestro bebé") + ". Con cariño, Pau y Cris.");
   $("#cal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" +
-    encodeURIComponent("Baby shower de Benjamin") + "&dates=20261213T193000Z/20261213T223000Z&details=" + det + "&location=" + q;
+    encodeURIComponent("Baby shower de " + nb(NOMBRE, "Pau y Cris")) + "&dates=20261213T193000Z/20261213T223000Z&details=" + det + "&location=" + q;
 }
 
 /* ---------- llave Bre-B ---------- */
@@ -795,10 +834,101 @@ $("#copiar-llave").addEventListener("click", async () => {
   }
 });
 
+/* ---------- Revelación del nombre ---------- */
+const NOMBRE = "Benjamin";
+function yaRevelado() { return !!(guardado.get("revelado", false) || guardado.get("rsvp", null) || guardado.get("invitado", "")); }
+function nb(real, anon) { return document.body.classList.contains("revelado") ? real : anon; }
+function aplicarNombre() {
+  document.querySelectorAll(".nb").forEach(s => { s.textContent = s.dataset.real; });
+  $("#titulo").classList.remove("anon");
+  document.body.classList.add("revelado");
+  document.title = "Baby Shower de " + NOMBRE;
+  guardado.set("revelado", true);
+  enlaces();
+}
+
+let revelando = null;
+function revelar(asiste) {
+  if (revelando) return revelando;
+  const ov = $("#revelar");
+  $("#rev-sub").textContent = asiste ? "te espera" : "te manda un abrazo gigante";
+  $("#rev-fecha").hidden = !asiste;
+  $("#rev-cerrar").textContent = asiste ? "¡Allá nos vemos!" : "¡Gracias!";
+  // letras del nombre, una por una
+  $("#rev-nombre").replaceChildren(...[...NOMBRE].map(c => el("span", { class: "l" }, c)));
+  ov.hidden = false;
+  document.body.style.overflow = "hidden";
+  revelando = new Promise(resolve => {
+    let cerrado = false;
+    const cerrar = () => {
+      if (cerrado) return; cerrado = true;
+      let listo = false;
+      const fin = () => {
+        if (listo) return; listo = true;
+        ov.hidden = true; ov.style.opacity = ""; document.body.style.overflow = ""; revelando = null; resolve();
+      };
+      if (window.gsap && !reducido()) gsap.to(ov, { opacity: 0, duration: .45, onComplete: fin });
+      setTimeout(fin, 600); // por si el navegador pausa las animaciones
+    };
+    $("#rev-cerrar").onclick = cerrar;
+    ov.onkeydown = (e) => { if (e.key === "Escape") cerrar(); };
+    animarRevelacion().then(() => $("#rev-cerrar").focus());
+  });
+  return revelando;
+}
+function reducido() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
+
+function confeti(opts) {
+  if (typeof window.confetti !== "function" || reducido()) return;
+  window.confetti(Object.assign({
+    colors: ["#f5c64a", "#ec7f57", "#5f9e4f", "#e63946", "#3a86ff", "#ffffff"],
+    disableForReducedMotion: true, zIndex: 60
+  }, opts));
+}
+
+function animarRevelacion() {
+  const letras = [...document.querySelectorAll("#rev-nombre .l")];
+  const piezas = ["#rev-pre", "#rev-heroe", "#rev-sub", "#rev-fecha", "#rev-cerrar"].map(s => $(s));
+  if (!window.gsap || reducido()) {
+    // Versión tranquila: todo aparece de una vez.
+    [...letras, ...piezas].forEach(n => { n.style.opacity = 1; n.style.transform = "none"; });
+    $("#rev-pre").style.opacity = 0;
+    confeti({ particleCount: 120, spread: 90, origin: { y: .6 } });
+    return Promise.resolve();
+  }
+  const tl = gsap.timeline();
+  gsap.set([...letras, ...piezas], { opacity: 0 });
+  gsap.set("#rev-rayos", { opacity: 0, scale: .6 });
+  gsap.set("#rev-flash", { opacity: 0 });
+  tl.fromTo("#rev-pre", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .5, ease: "power2.out" })
+    .to("#rev-pre", { opacity: 0, scale: 1.4, duration: .35, ease: "power2.in" }, "+=.7")
+    .to("#rev-rayos", { opacity: 1, scale: 1, duration: .8, ease: "expo.out" }, "<")
+    .fromTo(letras,
+      { opacity: 0, scale: 4, y: -80, rotation: () => gsap.utils.random(-35, 35), filter: "blur(8px)" },
+      { opacity: 1, scale: 1, y: 0, rotation: 0, filter: "blur(0px)", duration: .55, ease: "back.out(2.2)", stagger: .09 }, "-=.2")
+    .to("#rev-flash", { opacity: .85, duration: .06 }, "-=.15")
+    .to("#rev-flash", { opacity: 0, duration: .5 })
+    .add(() => {
+      confeti({ particleCount: 140, spread: 75, startVelocity: 55, origin: { x: .1, y: .75 }, angle: 60 });
+      confeti({ particleCount: 140, spread: 75, startVelocity: 55, origin: { x: .9, y: .75 }, angle: 120 });
+      confeti({ particleCount: 90, spread: 360, startVelocity: 35, origin: { x: .5, y: .4 }, scalar: 1.2 });
+    }, "<")
+    .fromTo("#rev-nombre", { x: -10 }, { x: 0, duration: .45, ease: "elastic.out(1.4, .25)" }, "<")
+    .fromTo("#rev-heroe", { opacity: 0, scale: 0, rotation: -120 }, { opacity: 1, scale: 1, rotation: 0, duration: .7, ease: "back.out(2.5)" }, "-=.3")
+    .fromTo("#rev-sub", { opacity: 0, y: 30, letterSpacing: ".6em" }, { opacity: 1, y: 0, letterSpacing: ".08em", duration: .8, ease: "power3.out" }, "-=.35")
+    .fromTo("#rev-fecha", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .5 }, "-=.3")
+    .fromTo("#rev-cerrar", { opacity: 0, scale: .8 }, { opacity: 1, scale: 1, duration: .45, ease: "back.out(2)" }, "-=.1")
+    .add(() => confeti({ particleCount: 60, spread: 100, origin: { y: .3 }, gravity: .6, ticks: 300 }), "+=.6");
+  gsap.to("#rev-rayos", { rotation: 360, duration: 24, ease: "none", repeat: -1 });
+  setTimeout(() => { if (tl.progress() < 1) tl.progress(1); }, 8000); // si el navegador congeló la animación, mostrar el final
+  return new Promise(r => tl.eventCallback("onComplete", r));
+}
+
 /* ---------- inicio ---------- */
 (function iniciar() {
   if (!API_URL) $("#demo").hidden = false;
   tick(); relojId = setInterval(tick, 1000);
+  if (yaRevelado()) aplicarNombre();
   enlaces();
   const rsvp = guardado.get("rsvp", null);
   if (rsvp) mostrarGracias(rsvp); else if (guardado.get("invitado", "")) mostrarRegreso(guardado.get("invitado", ""));
