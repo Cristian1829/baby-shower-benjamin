@@ -57,11 +57,11 @@ function setup() {
   const add = (cat, regalo, detalle, tallas) => {
     Object.keys(tallas).forEach(t => filas.push([slug_(regalo + '-' + t), cat, regalo, detalle, t, tallas[t]]));
   };
-  add('Ropa', 'Pijama enteriza', 'Con cremallera o broches, algodón suave', { '3-6 m': 2, '6-9 m': 2, '9-12 m': 2, '12-18 m': 2 });
-  add('Ropa', 'Bodies manga larga', 'Paquete de 3 o más', { '3-6 m': 2, '6-9 m': 2, '9-12 m': 1, '12-18 m': 1 });
-  add('Ropa', 'Conjunto de diario', 'Pantalón + camiseta o buzo', { '6-9 m': 2, '9-12 m': 2, '12-18 m': 2, '18-24 m': 1 });
-  add('Ropa', 'Chaqueta o buzo abrigado', 'Para el frío bogotano', { '6-9 m': 1, '9-12 m': 1, '12-18 m': 1 });
-  add('Ropa', 'Medias antideslizantes', 'Paquete', { '6-12 m': 1, '12-24 m': 1 });
+  add('Ropa', 'Pijama enteriza', 'Con cremallera o broches, algodón suave', { '12-18 m': 2, '18-24 m': 2, '2 años': 1 });
+  add('Ropa', 'Bodies manga larga', 'Paquete de 3 o más', { '12-18 m': 2, '18-24 m': 1 });
+  add('Ropa', 'Conjunto de diario', 'Pantalón + camiseta o buzo', { '12-18 m': 2, '18-24 m': 2, '2 años': 1 });
+  add('Ropa', 'Chaqueta o buzo abrigado', 'Para el frío bogotano', { '12-18 m': 1, '18-24 m': 1 });
+  add('Ropa', 'Medias antideslizantes', 'Paquete', { '12-24 m': 2 });
   add('Pañales y aseo', 'Pañitos húmedos', 'Paquete x3, sin fragancia', { 'Única': 4 });
   add('Pañales y aseo', 'Kit de baño', 'Shampoo, jabón y crema antipañalitis', { 'Única': 2 });
   add('Pañales y aseo', 'Toalla con capota', '', { 'Única': 2 });

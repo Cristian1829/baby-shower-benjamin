@@ -3,7 +3,7 @@
 Página de una sola hoja con tres pasos:
 
 1. **Confirmar asistencia**: nombre, sí/no, adultos, niños y un mensaje para Benjamin.
-2. **Lista de regalos**: cada regalo tiene tallas y cantidades. Cuando alguien aparta uno, el cupo baja para todos y nadie lo repite. La ropa va de 3 meses en adelante (sin recién nacido). Hay además una sugerencia opcional de llevar pañales: a cada invitado se le propone la etapa (2, 3 o 4) que va más atrasada, para que no lleguen todos de la misma talla (hoja "Pañales"; la proporción meta se cambia en `ETAPAS_PANAL` de `Codigo.gs`). Al final está la lluvia de sobres con la llave Bre-B para transferencias.
+2. **Lista de regalos**: cada regalo tiene tallas y cantidades. Cuando alguien aparta uno, el cupo baja para todos y nadie lo repite. La ropa va desde la talla 12 meses en adelante. Hay además una sugerencia opcional de llevar pañales: a cada invitado se le propone la etapa (2, 3 o 4) que va más atrasada, para que no lleguen todos de la misma talla (hoja "Pañales"; la proporción meta se cambia en `ETAPAS_PANAL` de `Codigo.gs`). Al final está la lluvia de sobres con la llave Bre-B para transferencias.
 3. **Cómo llegar**: Google Maps, Waze y un botón para agregar al calendario.
 
 Archivos:

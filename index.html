@@ -329,7 +329,7 @@ footer img{width:60px;margin:0 auto}
     <p class="intro">Tu compañía es el mejor regalo. Si quieres traerle algo <span class="nb" data-real="a Benjamin">al bebé</span>, elige aquí un regalo y su talla. Al apartarlo, desaparece de la lista para que nadie lo repita.</p>
     <div class="notice">
       <img class="face" src="img/escudo.webp" alt="">
-      <p><strong><span class="nb" data-real="Benjamin">Nuestro bebé</span> va a crecer rapidito.</strong> Por eso te pedimos que no le regales ropa de recién nacido (0 a 3 meses). Las tallas de ropa van de 3 meses en adelante.</p>
+      <p><strong><span class="nb" data-real="Benjamin">Nuestro bebé</span> va a crecer rapidito.</strong> Por eso, si quieres regalarle ropa, que sea <strong>desde la talla 12 meses en adelante</strong>: las tallas más pequeñas le quedan cortas muy rápido.</p>
     </div>
 
     <div class="panales" id="panales">
@@ -447,11 +447,11 @@ const CATALOGO_DEMO = (() => {
       out.push({ id, categoria, regalo, detalle, talla, cantidad, quedan: cantidad });
     }
   };
-  add("Ropa", "Pijama enteriza", "Con cremallera o broches, algodón suave", { "3-6 m": 2, "6-9 m": 2, "9-12 m": 2, "12-18 m": 2 });
-  add("Ropa", "Bodies manga larga", "Paquete de 3 o más", { "3-6 m": 2, "6-9 m": 2, "9-12 m": 1, "12-18 m": 1 });
-  add("Ropa", "Conjunto de diario", "Pantalón + camiseta o buzo", { "6-9 m": 2, "9-12 m": 2, "12-18 m": 2, "18-24 m": 1 });
-  add("Ropa", "Chaqueta o buzo abrigado", "Para el frío bogotano", { "6-9 m": 1, "9-12 m": 1, "12-18 m": 1 });
-  add("Ropa", "Medias antideslizantes", "Paquete", { "6-12 m": 1, "12-24 m": 1 });
+  add("Ropa", "Pijama enteriza", "Con cremallera o broches, algodón suave", { "12-18 m": 2, "18-24 m": 2, "2 años": 1 });
+  add("Ropa", "Bodies manga larga", "Paquete de 3 o más", { "12-18 m": 2, "18-24 m": 1 });
+  add("Ropa", "Conjunto de diario", "Pantalón + camiseta o buzo", { "12-18 m": 2, "18-24 m": 2, "2 años": 1 });
+  add("Ropa", "Chaqueta o buzo abrigado", "Para el frío bogotano", { "12-18 m": 1, "18-24 m": 1 });
+  add("Ropa", "Medias antideslizantes", "Paquete", { "12-24 m": 2 });
   add("Pañales y aseo", "Pañitos húmedos", "Paquete x3, sin fragancia", { "Única": 4 });
   add("Pañales y aseo", "Kit de baño", "Shampoo, jabón y crema antipañalitis", { "Única": 2 });
   add("Pañales y aseo", "Toalla con capota", "", { "Única": 2 });
