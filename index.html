@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baby Shower de Benjamin</title>
+<meta name="description" content="Pau y Cris te invitan al baby shower de Benjamin. Domingo 13 de diciembre de 2026, 2:30 p. m.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Baby Shower de Benjamin">
+<meta property="og:description" content="Pau y Cris te invitan con mucho cariño. Domingo 13 de diciembre, 2:30 p. m. Confirma tu asistencia aquí.">
+<meta property="og:image" content="https://cristian1829.github.io/baby-shower-benjamin/img/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://cristian1829.github.io/baby-shower-benjamin/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f4a37">
+<link rel="icon" href="img/cara-leon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: una sola columna tipo tarjeta de invitación; selva arriba, pasos numerados (confirmar → regalos → cómo llegar). */
+:root{
+  --selva:#1f4a37;      /* verde profundo, texto y titulares */
+  --hoja:#5f9e4f;       /* verde hoja, acentos */
+  --musgo:#e2f2e3;      /* fondo suave */
+  --papel:#fffdf5;      /* tarjetas */
+  --banano:#f5c64a;     /* sol / resaltes */
+  --papaya:#ec7f57;     /* llamados a la acción */
+  --tinta:#2c3a31;      /* texto */
+  --suave:#64746a;      /* texto secundario */
+  --linea:#d6e4cf;
+  --f-display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --f-body:"Nunito","Segoe UI",system-ui,sans-serif;
+  --r:22px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--musgo);color:var(--tinta);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--f-display);color:var(--selva);line-height:1.08;text-wrap:balance;margin:0}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--banano);outline-offset:3px;border-radius:8px}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* ---------- Portada ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(90% 60% at 85% 0%, #fbf3c4 0%, rgba(251,243,196,0) 60%),
+  var(--musgo);
+  padding-block:0 28px;text-align:center}
+.eyebrow{display:inline-block;font:800 13px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--selva);background:rgba(255,253,245,.8);padding:9px 14px;border-radius:99px;margin-top:22px}
+.hero h1{font-size:clamp(64px,17vw,128px);font-weight:800;letter-spacing:-.02em;margin-top:8px;color:var(--selva);
+  text-shadow:0 4px 0 rgba(255,253,245,.9)}
+.scene{display:block;max-width:1200px;margin:-18px auto 0}
+.scene img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 70%;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 84%,transparent 100%),linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 84%,transparent 100%),linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-composite:intersect}
+@media (max-width:600px){.scene img{aspect-ratio:3/2;object-position:50% 85%}}
+.hero .lead{font-size:clamp(18px,4.6vw,22px);max-width:32ch;margin:4px auto 0;color:var(--tinta)}
+.hero .lead strong{color:var(--selva)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+.face{border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--papel),0 4px 12px rgba(31,74,55,.18)}
+
+/* ---------- Ficha del evento ---------- */
+.facts{background:var(--papel);border-radius:var(--r);box-shadow:0 10px 30px rgba(31,74,55,.10);margin-top:-6px;display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2}
+.fact{padding:18px 14px;text-align:center;min-width:0}
+.fact+.fact{border-left:2px dashed var(--linea)}
+.fact .k{font:800 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--hoja)}
+.fact .v{font:700 clamp(18px,4.4vw,24px)/1.15 var(--f-display);color:var(--selva);margin-top:6px}
+.fact .s{font-size:14px;color:var(--suave);margin-top:2px}
+@media (max-width:560px){.facts{grid-template-columns:1fr}.fact+.fact{border-left:0;border-top:2px dashed var(--linea)}}
+.countdown{display:flex;justify-content:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+.countdown div{background:var(--selva);color:var(--papel);border-radius:16px;min-width:70px;padding:8px 10px;text-align:center}
+.countdown b{display:block;font:800 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.countdown span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+
+/* ---------- Secciones / pasos ---------- */
+main{padding-block:20px 40px}
+.step{background:var(--papel);border-radius:var(--r);padding:clamp(20px,5vw,34px);margin-top:26px;box-shadow:0 6px 22px rgba(31,74,55,.07);position:relative}
+.step-head{display:flex;gap:14px;align-items:center}
+.step-head img{width:58px;height:58px;flex:none}
+.step-num{font:800 13px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--papaya)}
+.step h2{font-size:clamp(28px,7vw,38px);margin-top:4px}
+.step .intro{color:var(--suave);margin-top:12px;max-width:62ch}
+
+/* formularios */
+form{display:grid;gap:16px;margin-top:20px}
+label{font-weight:700;font-size:15px;color:var(--selva);display:block;margin-bottom:6px}
+.hint{font-weight:400;color:var(--suave);font-size:14px}
+input[type=text],input[type=tel],textarea,select{width:100%;border:2px solid var(--linea);background:#fff;border-radius:14px;padding:12px 14px;transition:border-color .15s}
+input:focus,textarea:focus,select:focus{border-color:var(--hoja);outline:none}
+textarea{min-height:88px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{margin:0;border:2px solid var(--linea);border-radius:16px;padding:14px;cursor:pointer;text-align:center;font-weight:700;background:#fff;transition:all .15s;color:var(--tinta)}
+.choice label small{display:block;font-weight:400;color:var(--suave);font-size:13px}
+.choice input:checked+label{border-color:var(--hoja);background:#eef7e8;color:var(--selva)}
+.choice input:focus-visible+label{outline:3px solid var(--banano);outline-offset:2px}
+.stepper{display:flex;align-items:center;border:2px solid var(--linea);border-radius:14px;background:#fff;overflow:hidden}
+.stepper button{border:0;background:transparent;width:48px;height:46px;font-size:22px;font-weight:800;color:var(--selva);cursor:pointer}
+.stepper button:hover{background:#eef7e8}
+.stepper output{flex:1;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:99px;padding:13px 22px;font:800 16px/1 var(--f-body);cursor:pointer;text-decoration:none;transition:transform .12s, box-shadow .12s, background .12s}
+.btn:active{transform:translateY(1px)}
+.btn-main{background:var(--papaya);color:#fff;box-shadow:0 5px 0 #c85f3b}
+.btn-main:hover{background:#f08d68}
+.btn-main:disabled{opacity:.6;cursor:wait}
+.btn-soft{background:var(--papel);color:var(--selva);box-shadow:inset 0 0 0 2px var(--hoja)}
+.btn-soft:hover{background:#eef7e8}
+.btn-link{background:none;border:0;color:var(--selva);font-weight:700;text-decoration:underline;cursor:pointer;padding:0}
+.form-msg{font-weight:700;min-height:1.4em}
+.form-msg.err{color:#b23b2a}
+
+.volver{margin-top:10px;font-size:15px}
+.volver-box{margin-top:14px;background:#eef7e8;border-radius:16px;padding:14px;display:grid;gap:8px}
+.volver-box label{margin:0}
+.volver-row{display:flex;gap:10px;flex-wrap:wrap}
+.volver-row input{flex:1 1 200px;min-width:0}
+.volver-row .btn{padding:12px 18px;font-size:15px}
+.thanks{display:flex;gap:16px;align-items:center;background:#eef7e8;border-radius:18px;padding:18px;margin-top:20px}
+.thanks img{width:70px;flex:none}
+.thanks h3{font-size:24px}
+.thanks p{color:var(--tinta)}
+
+/* ---------- Regalos ---------- */
+.notice{display:flex;gap:12px;align-items:flex-start;background:#fff6d9;border:2px solid #f3dd8f;border-radius:16px;padding:14px 16px;margin-top:18px}
+.notice img{width:40px;flex:none}
+.notice p{font-size:15px}
+.panales{display:flex;gap:14px;align-items:flex-start;margin-top:16px;border:2px dashed var(--hoja);border-radius:18px;padding:16px;background:#f6fbf2}
+.panales > img{width:52px;flex:none}
+.pan-body{display:grid;gap:10px;min-width:0;flex:1}
+.pan-k{font:800 11px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--papaya)}
+.pan-body h3{font-size:22px}
+.pan-body p{font-size:15px}
+.pan-tip{color:var(--suave)}
+#pan-elegir{display:grid;gap:10px}
+.etapas{display:flex;flex-wrap:wrap;gap:8px}
+.etapa{position:relative;border:2px solid var(--linea);background:#fff;color:var(--selva);border-radius:14px;padding:8px 12px;font-weight:800;font-size:15px;cursor:pointer;text-align:left;line-height:1.15}
+.etapa small{display:block;font-weight:600;font-size:11px;color:var(--suave)}
+.etapa.sug{border-color:var(--banano)}
+.etapa .tag{position:absolute;top:-9px;right:8px;background:var(--banano);color:var(--selva);font:800 9px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:3px 6px;border-radius:99px}
+.etapa[aria-pressed=true]{background:var(--hoja);border-color:var(--hoja);color:#fff}
+.etapa[aria-pressed=true] small{color:#eaf5e4}
+.pan-acts{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.pan-acts .btn{padding:11px 18px;font-size:15px}
+.pan-listo{display:grid;gap:6px;justify-items:start}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.tab{border:2px solid var(--linea);background:#fff;border-radius:99px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;color:var(--tinta)}
+.tab[aria-pressed=true]{background:var(--selva);border-color:var(--selva);color:var(--papel)}
+.gifts{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:16px}
+.gift{border:2px solid var(--linea);border-radius:18px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px;min-width:0}
+.gift.done{opacity:.6}
+.gift .cat{font:800 11px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--hoja)}
+.gift h3{font-size:21px}
+.gift .det{font-size:14px;color:var(--suave)}
+.sizes{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.size{border:2px solid var(--hoja);background:#fff;color:var(--selva);border-radius:12px;padding:6px 10px;font-weight:800;font-size:14px;cursor:pointer;line-height:1.15;text-align:left}
+.size small{display:block;font-weight:600;font-size:11px;color:var(--suave)}
+.size:hover:not(:disabled){background:#eef7e8}
+.size[aria-pressed=true]{background:var(--hoja);color:#fff}
+.size[aria-pressed=true] small{color:#eaf5e4}
+.size:disabled{border-color:var(--linea);color:#9aa79f;cursor:not-allowed;text-decoration:line-through}
+.size:disabled small{text-decoration:none}
+.confirm{background:#eef7e8;border-radius:14px;padding:12px;display:grid;gap:10px;font-size:15px}
+.confirm .acts{display:flex;gap:8px;flex-wrap:wrap}
+.confirm .btn{padding:10px 16px;font-size:15px}
+.loading{color:var(--suave);padding:20px 0}
+.mine{margin-top:22px;border-top:2px dashed var(--linea);padding-top:18px}
+.mine h3{font-size:22px}
+.mine ul{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.mine li{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#f6faf3;border-radius:12px;padding:10px 14px;flex-wrap:wrap}
+.envelope{display:flex;gap:14px;align-items:center;margin-top:20px;background:linear-gradient(90deg,#fff6d9,#fdebdc);border-radius:18px;padding:16px}
+.envelope{align-items:flex-start}
+.envelope img{width:52px;flex:none}
+.env-body{display:grid;gap:12px;min-width:0}
+.llave{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--papel);border-radius:14px;padding:10px 12px 10px 16px}
+.llave-k{display:block;font:800 11px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--hoja)}
+.llave-v{display:block;font:800 26px/1.2 var(--f-display);color:var(--selva);font-variant-numeric:tabular-nums;letter-spacing:.03em;user-select:all}
+.llave .btn{padding:10px 16px;font-size:15px}
+
+/* ---------- Cómo llegar ---------- */
+.place{display:grid;gap:6px;margin-top:16px}
+.place .addr{font:700 24px/1.2 var(--f-display);color:var(--selva)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+footer{text-align:center;padding-block:10px 50px;color:var(--suave)}
+footer .sign{font:800 30px/1.1 var(--f-display);color:var(--selva);margin-top:8px}
+footer img{width:60px;margin:0 auto}
+.demo{position:fixed;left:max(10px,env(safe-area-inset-left,0px));bottom:calc(10px + env(safe-area-inset-bottom,0px));background:var(--selva);color:var(--papel);font-size:12px;padding:6px 10px;border-radius:99px;opacity:.85;z-index:20}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--selva);color:#fff;padding:12px 18px;border-radius:14px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:30;max-width:calc(100% - 32px);text-align:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Baby shower de superhéroes</span>
+    <h1>Benjamin</h1>
+  </div>
+  <picture class="scene">
+    <source srcset="img/heroes.webp" type="image/webp">
+    <img src="img/heroes.jpg" width="1376" height="768" alt="Ilustración en acuarela de una tortuga, una jirafa, un león, un elefante, un mono y un loro bebés disfrazados de superhéroes en la selva">
+  </picture>
+  <div class="wrap">
+    <p class="lead">Un pequeño superhéroe viene en camino y <strong>Pau y Cris</strong> quieren celebrarlo contigo. ¡Nos encantaría que nos acompañes!</p>
+    <div class="hero-cta">
+      <a class="btn btn-main" href="#confirmar">Confirmar asistencia</a>
+      <a class="btn btn-soft" href="#regalos">Ver lista de regalos</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="facts" aria-label="Datos del evento">
+    <div class="fact"><div class="k">Cuándo</div><div class="v">Domingo 13 de diciembre</div><div class="s">2026</div></div>
+    <div class="fact"><div class="k">Hora</div><div class="v">2:30 p. m.</div><div class="s">Llega con calma</div></div>
+    <div class="fact"><div class="k">Dónde</div><div class="v">Conjunto Residencial Picasso</div><div class="s">Cl. 160 #72-51</div></div>
+  </section>
+  <div class="countdown" id="countdown" aria-label="Cuenta regresiva">
+    <div><b id="cd-d">--</b><span>días</span></div>
+    <div><b id="cd-h">--</b><span>horas</span></div>
+    <div><b id="cd-m">--</b><span>min</span></div>
+    <div><b id="cd-s">--</b><span>seg</span></div>
+  </div>
+
+  <!-- PASO 1 -->
+  <section class="step" id="confirmar">
+    <div class="step-head">
+      <img class="face" src="img/cara-elefante.webp" alt="">
+      <div><div class="step-num">Paso 1 de 3</div><h2>¿Nos acompañas?</h2></div>
+    </div>
+    <p class="intro">Confírmanos tu asistencia, así preparamos todo con mucho amor y alcanza para todos. Te toma un minuto, y el regalo lo puedes elegir después.</p>
+    <p class="volver" id="volver-wrap"><button class="btn-link" type="button" id="volver">¿Ya confirmaste antes? Solo quiero elegir mi regalo</button></p>
+    <div class="volver-box" id="volver-box" hidden>
+      <label for="v-nombre">¿Con qué nombre confirmaste?</label>
+      <div class="volver-row">
+        <input type="text" id="v-nombre" maxlength="80" autocomplete="name" placeholder="Ej.: Tía Marta y Juan">
+        <button class="btn btn-main" type="button" id="v-seguir">Ir a los regalos</button>
+      </div>
+      <span class="form-msg err" id="v-msg" role="status"></span>
+    </div>
+
+    <form id="rsvp-form" novalidate>
+      <div>
+        <label for="r-nombre">Tu nombre <span class="hint">(o el de tu familia)</span></label>
+        <input type="text" id="r-nombre" name="nombre" autocomplete="name" maxlength="80" required placeholder="Ej.: Tía Marta y Juan">
+      </div>
+      <div class="choice" role="radiogroup" aria-label="¿Asistirás?">
+        <input type="radio" name="asiste" id="r-si" value="Sí" checked>
+        <label for="r-si">¡Sí, ahí estaré!<small>Cuenten conmigo</small></label>
+        <input type="radio" name="asiste" id="r-no" value="No">
+        <label for="r-no">No podré ir<small>Pero los acompaño con cariño</small></label>
+      </div>
+      <div class="row2" id="r-cuantos">
+        <div>
+          <label id="lbl-adultos">Adultos</label>
+          <div class="stepper" aria-labelledby="lbl-adultos">
+            <button type="button" data-step="adultos" data-d="-1" aria-label="Menos adultos">−</button>
+            <output id="r-adultos">1</output>
+            <button type="button" data-step="adultos" data-d="1" aria-label="Más adultos">+</button>
+          </div>
+        </div>
+        <div>
+          <label id="lbl-ninos">Niños</label>
+          <div class="stepper" aria-labelledby="lbl-ninos">
+            <button type="button" data-step="ninos" data-d="-1" aria-label="Menos niños">−</button>
+            <output id="r-ninos">0</output>
+            <button type="button" data-step="ninos" data-d="1" aria-label="Más niños">+</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <label for="r-msg">Un mensajito para Benjamin <span class="hint">(opcional)</span></label>
+        <textarea id="r-msg" name="mensaje" maxlength="400" placeholder="Bienvenido al mundo, pequeño héroe…"></textarea>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-main" type="submit" id="r-enviar">Enviar confirmación</button>
+        <span class="form-msg" id="r-estado" role="status"></span>
+      </div>
+    </form>
+
+    <div class="thanks" id="rsvp-ok" hidden>
+      <img class="face" src="img/cara-mono.webp" alt="">
+      <div>
+        <h3 id="ok-titulo">¡Gracias!</h3>
+        <p id="ok-texto"></p>
+        <p style="margin-top:8px"><button class="btn-link" type="button" id="r-editar">Cambiar mi respuesta</button></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASO 2 -->
+  <section class="step" id="regalos">
+    <div class="step-head">
+      <img class="face" src="img/cara-jirafa.webp" alt="">
+      <div><div class="step-num">Paso 2 de 3</div><h2>Lista de regalos</h2></div>
+    </div>
+    <p class="intro">Tu compañía es el mejor regalo. Si quieres traerle algo a Benjamin, elige aquí un regalo y su talla. Al apartarlo, desaparece de la lista para que nadie lo repita.</p>
+    <div class="notice">
+      <img class="face" src="img/escudo.webp" alt="">
+      <p><strong>Benjamin va a crecer rapidito.</strong> Por eso te pedimos que no le regales ropa de recién nacido (0 a 3 meses). Las tallas de ropa van de 3 meses en adelante.</p>
+    </div>
+
+    <div class="panales" id="panales">
+      <img class="face" src="img/cara-mono.webp" alt="">
+      <div class="pan-body">
+        <span class="pan-k">Una idea, solo si te nace</span>
+        <h3>¿Nos ayudas con un paquete de pañales?</h3>
+        <p>Benjamin va a usar muchísimos, así que un paquete de pañales siempre nos va a caer de maravilla, junto con tu regalo o en lugar de él. No es ningún compromiso: lo que más queremos es que vengas.</p>
+
+        <div id="pan-elegir">
+          <p class="pan-tip">Para que no lleguen todos de la misma talla, te sugerimos la etapa marcada. Si prefieres otra, elígela sin problema.</p>
+          <div class="etapas" id="pan-etapas" role="group" aria-label="Etapa de pañales"></div>
+          <input type="text" id="pan-nombre" maxlength="80" placeholder="Tu nombre" aria-label="Tu nombre" hidden>
+          <div class="pan-acts">
+            <button class="btn btn-main" type="button" id="pan-ok">Sí, llevo pañales</button>
+            <span class="form-msg" id="pan-msg" role="status"></span>
+          </div>
+        </div>
+
+        <div class="pan-listo" id="pan-listo" hidden>
+          <p><strong>¡Mil gracias!</strong> Anotamos que llevas pañales <strong id="pan-etapa"></strong>.</p>
+          <button class="btn-link" type="button" id="pan-quitar">Ya no los voy a llevar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabs" role="group" aria-label="Filtrar por tipo de regalo"></div>
+    <div class="gifts" id="gifts"><p class="loading">Cargando la lista de regalos…</p></div>
+
+    <div class="envelope">
+      <img class="face" src="img/cara-loro.webp" alt="">
+      <div class="env-body">
+        <p><strong>¿Prefieres la lluvia de sobres o una transferencia?</strong> También es bienvenida y no hace falta apartarla. Nos ayuda a comprar lo que Benjamin vaya necesitando.</p>
+        <div class="llave">
+          <div>
+            <span class="llave-k">Llave Bre-B</span>
+            <span class="llave-v" id="llave">3006322138</span>
+          </div>
+          <button class="btn btn-soft" type="button" id="copiar-llave">Copiar llave</button>
+        </div>
+        <p class="hint">Desde la app de tu banco, elige transferir con llave Bre-B y pega este número.</p>
+      </div>
+    </div>
+
+    <div class="mine" id="mine" hidden>
+      <h3>Tus regalos apartados</h3>
+      <ul id="mine-list"></ul>
+    </div>
+  </section>
+
+  <!-- PASO 3 -->
+  <section class="step" id="llegar">
+    <div class="step-head">
+      <img class="face" src="img/cara-tortuga.webp" alt="">
+      <div><div class="step-num">Paso 3 de 3</div><h2>Cómo llegar</h2></div>
+    </div>
+    <div class="place">
+      <div class="addr">Conjunto Residencial Picasso</div>
+      <p>Calle 160 #72-51, Bogotá</p>
+      <p>Domingo 13 de diciembre de 2026 · 2:30 p. m.</p>
+    </div>
+    <div class="links">
+      <a class="btn btn-main" id="maps" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      <a class="btn btn-soft" id="waze" target="_blank" rel="noopener">Abrir en Waze</a>
+      <a class="btn btn-soft" id="cal" target="_blank" rel="noopener">Agregar al calendario</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img class="face" src="img/cara-leon.webp" alt="">
+  <p>Con todo nuestro cariño,</p>
+  <div class="sign">Pau, Cris y Benjamin</div>
+</footer>
+
+<div class="demo" id="demo" hidden>Modo de prueba: los datos se guardan solo en este navegador</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN
+   Pega aquí la URL de tu Google Apps Script (ver README.md).
+   Si queda vacía, la página funciona en "modo de prueba".
+   ========================================================= */
+const API_URL = "https://script.google.com/macros/s/AKfycbzlnFsMBGhVKUfnxCRXP1jQWOuBG_c3skeemlTKi7q0mOQPi1obpgkI9OCxgAcAsLyD/exec";
+
+const EVENTO = {
+  inicio: new Date("2026-12-13T14:30:00-05:00"),
+  direccion: "Calle 160 #72-51, Conjunto Residencial Picasso, Bogotá, Colombia"
+};
+
+/* Catálogo de respaldo para el modo de prueba.
+   Con Google Sheets activo, la lista real sale de la hoja "Regalos". */
+const CATALOGO_DEMO = (() => {
+  const out = [];
+  const add = (categoria, regalo, detalle, tallas) => {
+    for (const [talla, cantidad] of Object.entries(tallas)) {
+      const id = (regalo + "-" + talla).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-");
+      out.push({ id, categoria, regalo, detalle, talla, cantidad, quedan: cantidad });
+    }
+  };
+  add("Ropa", "Pijama enteriza", "Con cremallera o broches, algodón suave", { "3-6 m": 2, "6-9 m": 2, "9-12 m": 2, "12-18 m": 2 });
+  add("Ropa", "Bodies manga larga", "Paquete de 3 o más", { "3-6 m": 2, "6-9 m": 2, "9-12 m": 1, "12-18 m": 1 });
+  add("Ropa", "Conjunto de diario", "Pantalón + camiseta o buzo", { "6-9 m": 2, "9-12 m": 2, "12-18 m": 2, "18-24 m": 1 });
+  add("Ropa", "Chaqueta o buzo abrigado", "Para el frío bogotano", { "6-9 m": 1, "9-12 m": 1, "12-18 m": 1 });
+  add("Ropa", "Medias antideslizantes", "Paquete", { "6-12 m": 1, "12-24 m": 1 });
+  add("Pañales y aseo", "Pañitos húmedos", "Paquete x3, sin fragancia", { "Única": 4 });
+  add("Pañales y aseo", "Kit de baño", "Shampoo, jabón y crema antipañalitis", { "Única": 2 });
+  add("Pañales y aseo", "Toalla con capota", "", { "Única": 2 });
+  add("Comida", "Set de baberos", "Impermeables o de silicona", { "Única": 2 });
+  add("Comida", "Vajilla de silicona", "Plato, vaso y cucharas", { "Única": 1 });
+  add("Comida", "Silla de comer", "", { "Única": 1 });
+  add("Paseo y descanso", "Portabebé ergonómico", "", { "Única": 1 });
+  add("Paseo y descanso", "Monitor de bebé", "", { "Única": 1 });
+  add("Paseo y descanso", "Juego de sábanas para cuna", "", { "Única": 2 });
+  add("Paseo y descanso", "Cobija suave", "", { "Única": 2 });
+  add("Juego", "Libros de tela o cartón", "", { "Única": 3 });
+  add("Juego", "Gimnasio de actividades", "", { "Única": 1 });
+  add("Juego", "Mordedores y sonajeros", "", { "Única": 2 });
+  return out;
+})();
+
+/* ---------- utilidades ---------- */
+const $ = (s) => document.querySelector(s);
+const guardado = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+let toastTimer;
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => (t.hidden = true), 3800);
+}
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) n.setAttribute(k, v === true ? "" : v);
+  }
+  for (const k of kids.flat()) if (k != null) n.append(k);
+  return n;
+}
+
+/* ---------- conexión con Google Sheets (o modo de prueba) ---------- */
+async function api(action, datos = {}) {
+  if (!API_URL) return apiDemo(action, datos);
+  if (action === "gifts") {
+    const r = await fetch(API_URL + "?action=gifts&t=" + Date.now());
+    return r.json();
+  }
+  const r = await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({ action, ...datos })
+  });
+  return r.json();
+}
+function apiDemo(action, d) {
+  const reservas = guardado.get("demo_reservas", []);
+  const lista = () => CATALOGO_DEMO.map(g => ({ ...g, quedan: g.cantidad - reservas.filter(r => r.id === g.id && r.activa).length }));
+  const pan = guardado.get("demo_panales", []);
+  const estadoPan = () => {
+    const conteo = {}; for (const e of Object.keys(ETAPAS_PANAL)) conteo[e] = pan.filter(p => p.etapa === e && p.activa).length;
+    let sugerida = null, mejor = Infinity;
+    for (const [e, w] of Object.entries(ETAPAS_PANAL)) {
+      const s = (conteo[e] + 1) / w;
+      if (s < mejor - 1e-9 || (Math.abs(s - mejor) < 1e-9 && w > ETAPAS_PANAL[sugerida])) { mejor = s; sugerida = e; }
+    }
+    return { conteo, sugerida };
+  };
+  if (action === "gifts") return { ok: true, gifts: lista(), panales: estadoPan() };
+  if (action === "rsvp") return { ok: true };
+  if (action === "panal") {
+    const codigo = Math.random().toString(36).slice(2, 10);
+    pan.push({ etapa: d.etapa, codigo, activa: true }); guardado.set("demo_panales", pan);
+    return { ok: true, codigo };
+  }
+  if (action === "cancelPanal") {
+    const p = pan.find(x => x.codigo === d.codigo); if (p) p.activa = false;
+    guardado.set("demo_panales", pan); return { ok: true };
+  }
+  if (action === "reserve") {
+    const g = lista().find(x => x.id === d.id);
+    if (!g) return { ok: false, error: "no_existe" };
+    if (g.quedan <= 0) return { ok: false, error: "agotado" };
+    const codigo = Math.random().toString(36).slice(2, 10);
+    reservas.push({ id: d.id, codigo, activa: true }); guardado.set("demo_reservas", reservas);
+    return { ok: true, codigo };
+  }
+  if (action === "cancel") {
+    const r = reservas.find(x => x.codigo === d.codigo); if (r) r.activa = false;
+    guardado.set("demo_reservas", reservas); return { ok: true };
+  }
+  return { ok: false, error: "accion" };
+}
+
+/* ---------- cuenta regresiva ---------- */
+let relojId;
+function tick() {
+  const ms = EVENTO.inicio - Date.now();
+  if (ms <= 0) { clearInterval(relojId); $("#countdown").replaceChildren(el("p", { style: "font-weight:800;color:var(--selva)" }, "¡Hoy es el gran día!")); return; }
+  const s = Math.floor(ms / 1000);
+  $("#cd-d").textContent = Math.floor(s / 86400);
+  $("#cd-h").textContent = String(Math.floor((s % 86400) / 3600)).padStart(2, "0");
+  $("#cd-m").textContent = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+  $("#cd-s").textContent = String(s % 60).padStart(2, "0");
+}
+
+/* ---------- Paso 1: confirmación ---------- */
+const cuenta = { adultos: 1, ninos: 0 };
+function pintarCuenta() { $("#r-adultos").textContent = cuenta.adultos; $("#r-ninos").textContent = cuenta.ninos; }
+document.querySelectorAll("[data-step]").forEach(b => b.addEventListener("click", () => {
+  const k = b.dataset.step, min = k === "adultos" ? 1 : 0;
+  cuenta[k] = Math.max(min, Math.min(15, cuenta[k] + Number(b.dataset.d))); pintarCuenta();
+}));
+document.querySelectorAll("input[name=asiste]").forEach(r => r.addEventListener("change", () => {
+  $("#r-cuantos").hidden = $("#r-no").checked;
+}));
+
+/* Nombre con el que esta persona aparta regalos: el de su confirmación o el que escribió al volver. */
+function nombreInvitado() {
+  const r = guardado.get("rsvp", null);
+  return (r && r.nombre) || guardado.get("invitado", "") || "";
+}
+
+function mostrarGracias(rsvp) {
+  $("#rsvp-form").hidden = true; $("#rsvp-ok").hidden = false; $("#volver-wrap").hidden = true; $("#volver-box").hidden = true;
+  const nombre = rsvp.nombre;
+  const sinPrisa = " No tienes que decidir el regalo hoy: puedes volver a este mismo enlace cuando quieras.";
+  if (rsvp.asiste === "Sí") {
+    $("#ok-titulo").textContent = "¡Qué alegría, " + nombre + "!";
+    $("#ok-texto").textContent = "Te esperamos el domingo 13 de diciembre a las 2:30 p. m. Abajo está la lista de regalos." + sinPrisa;
+  } else {
+    $("#ok-titulo").textContent = "Gracias por avisarnos, " + nombre;
+    $("#ok-texto").textContent = "Te vamos a extrañar. Si quieres, igual puedes apartar un detallito para Benjamin aquí abajo." + sinPrisa;
+  }
+}
+
+function mostrarRegreso(nombre) {
+  $("#rsvp-form").hidden = true; $("#rsvp-ok").hidden = false; $("#volver-wrap").hidden = true; $("#volver-box").hidden = true;
+  $("#ok-titulo").textContent = "¡Hola de nuevo, " + nombre + "!";
+  $("#ok-texto").textContent = "Abajo puedes elegir tu regalo con toda la calma. Si quieres cambiar tu confirmación, también puedes hacerlo aquí.";
+}
+
+$("#volver").addEventListener("click", () => {
+  $("#volver-box").hidden = false; $("#v-nombre").focus();
+});
+$("#v-seguir").addEventListener("click", () => {
+  const nombre = $("#v-nombre").value.trim();
+  if (nombre.length < 2) { $("#v-msg").textContent = "Escribe tu nombre para seguir."; $("#v-nombre").focus(); return; }
+  guardado.set("invitado", nombre);
+  mostrarRegreso(nombre); pintarPanales();
+  $("#regalos").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+$("#v-nombre").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); $("#v-seguir").click(); } });
+
+$("#rsvp-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const nombre = $("#r-nombre").value.trim();
+  const estado = $("#r-estado");
+  estado.className = "form-msg";
+  if (nombre.length < 2) { estado.textContent = "Escribe tu nombre para saber quién nos acompaña."; estado.classList.add("err"); $("#r-nombre").focus(); return; }
+  const asiste = $("#r-si").checked ? "Sí" : "No";
+  const rsvp = {
+    nombre, asiste,
+    adultos: asiste === "Sí" ? cuenta.adultos : 0,
+    ninos: asiste === "Sí" ? cuenta.ninos : 0,
+    mensaje: $("#r-msg").value.trim()
+  };
+  const btn = $("#r-enviar"); btn.disabled = true; estado.textContent = "Enviando…";
+  try {
+    const r = await api("rsvp", rsvp);
+    if (!r.ok) throw new Error(r.error);
+    guardado.set("rsvp", rsvp);
+    guardado.set("invitado", rsvp.nombre);
+    estado.textContent = "";
+    mostrarGracias(rsvp);
+    $("#rsvp-ok").scrollIntoView({ behavior: "smooth", block: "center" });
+  } catch {
+    estado.textContent = "No pudimos enviar tu respuesta. Revisa tu conexión e inténtalo de nuevo.";
+    estado.classList.add("err");
+  } finally { btn.disabled = false; }
+});
+$("#r-editar").addEventListener("click", () => {
+  const r = guardado.get("rsvp", null);
+  if (r) {
+    $("#r-nombre").value = r.nombre; $("#r-msg").value = r.mensaje || "";
+    (r.asiste === "Sí" ? $("#r-si") : $("#r-no")).checked = true;
+    cuenta.adultos = Math.max(1, r.adultos || 1); cuenta.ninos = r.ninos || 0; pintarCuenta();
+    $("#r-cuantos").hidden = r.asiste !== "Sí";
+  } else if (nombreInvitado()) {
+    $("#r-nombre").value = nombreInvitado();
+  }
+  $("#rsvp-form").hidden = false; $("#rsvp-ok").hidden = true; $("#r-nombre").focus();
+});
+
+/* ---------- Paso 2: regalos ---------- */
+let regalos = [];
+let filtro = "Todos";
+let seleccion = null; // id de la talla elegida
+
+function grupos() {
+  const map = new Map();
+  for (const g of regalos) {
+    if (filtro !== "Todos" && g.categoria !== filtro) continue;
+    if (!map.has(g.regalo)) map.set(g.regalo, { regalo: g.regalo, categoria: g.categoria, detalle: g.detalle, tallas: [] });
+    map.get(g.regalo).tallas.push(g);
+  }
+  return [...map.values()];
+}
+
+function pintarTabs() {
+  const cats = ["Todos", ...new Set(regalos.map(g => g.categoria))];
+  $("#tabs").replaceChildren(...cats.map(c => el("button", {
+    class: "tab", type: "button", "aria-pressed": String(c === filtro),
+    onclick: () => { filtro = c; seleccion = null; pintarTabs(); pintarRegalos(); }
+  }, c)));
+}
+
+function etiquetaQuedan(n) { return n <= 0 ? "¡Ya lo tiene!" : n === 1 ? "queda 1" : "quedan " + n; }
+
+function pintarRegalos() {
+  const cont = $("#gifts");
+  const gs = grupos();
+  if (!gs.length) { cont.replaceChildren(el("p", { class: "loading" }, "No hay regalos en esta categoría.")); return; }
+  cont.replaceChildren(...gs.map(grupo => {
+    const total = grupo.tallas.reduce((a, t) => a + Math.max(0, t.quedan), 0);
+    const elegido = grupo.tallas.find(t => t.id === seleccion);
+    const unica = grupo.tallas.length === 1 && grupo.tallas[0].talla === "Única";
+    return el("article", { class: "gift" + (total === 0 ? " done" : "") },
+      el("div", { class: "cat" }, grupo.categoria),
+      el("h3", {}, grupo.regalo),
+      grupo.detalle ? el("p", { class: "det" }, grupo.detalle) : null,
+      el("div", { class: "sizes", role: "group", "aria-label": "Tallas de " + grupo.regalo },
+        grupo.tallas.map(t => el("button", {
+          class: "size", type: "button", disabled: t.quedan <= 0,
+          "aria-pressed": String(t.id === seleccion),
+          onclick: () => { seleccion = seleccion === t.id ? null : t.id; pintarRegalos(); }
+        }, unica ? "Apartar" : t.talla, el("small", {}, etiquetaQuedan(t.quedan))))
+      ),
+      elegido ? cajaConfirmar(elegido, unica) : null
+    );
+  }));
+}
+
+function cajaConfirmar(t, unica) {
+  const conocido = nombreInvitado();
+  const nombreInput = conocido ? null : el("input", { type: "text", id: "g-nombre", maxlength: "80", placeholder: "Tu nombre", "aria-label": "Tu nombre" });
+  const msg = el("span", { class: "form-msg", role: "status" });
+  const ok = el("button", { class: "btn btn-main", type: "button", onclick: async () => {
+    const invitado = conocido || nombreInput.value.trim();
+    if (invitado.length < 2) { msg.textContent = "Escribe tu nombre para apartarlo."; msg.className = "form-msg err"; nombreInput.focus(); return; }
+    ok.disabled = true; msg.className = "form-msg"; msg.textContent = "Apartando…";
+    try {
+      const r = await api("reserve", { id: t.id, invitado });
+      if (!r.ok) {
+        if (r.error === "agotado") { toast("¡Uy! Alguien acaba de apartar ese. Elige otra talla u otro regalo."); }
+        else toast("No pudimos apartarlo. Inténtalo de nuevo.");
+        seleccion = null; await cargarRegalos(); return;
+      }
+      const mios = guardado.get("mis_regalos", []);
+      mios.push({ codigo: r.codigo, id: t.id, regalo: t.regalo, talla: t.talla });
+      guardado.set("mis_regalos", mios);
+      seleccion = null;
+      toast("¡Listo! Apartaste " + t.regalo + (unica ? "" : " talla " + t.talla) + ". Gracias por consentir a Benjamin.");
+      await cargarRegalos();
+    } catch { msg.textContent = "Sin conexión. Inténtalo de nuevo."; msg.className = "form-msg err"; ok.disabled = false; }
+  } }, "Sí, yo lo regalo");
+  return el("div", { class: "confirm" },
+    el("div", {}, "Vas a regalar ", el("strong", {}, t.regalo + (unica ? "" : " · talla " + t.talla)), "."),
+    nombreInput,
+    el("div", { class: "acts" }, ok, el("button", { class: "btn btn-soft", type: "button", onclick: () => { seleccion = null; pintarRegalos(); } }, "Mejor no")),
+    msg
+  );
+}
+
+function pintarMios() {
+  const mios = guardado.get("mis_regalos", []);
+  $("#mine").hidden = !mios.length;
+  $("#mine-list").replaceChildren(...mios.map(m => el("li", {},
+    el("span", {}, el("strong", {}, m.regalo), m.talla === "Única" ? "" : " · talla " + m.talla),
+    el("button", { class: "btn-link", type: "button", onclick: async (ev) => {
+      ev.target.disabled = true;
+      try {
+        await api("cancel", { codigo: m.codigo });
+        guardado.set("mis_regalos", guardado.get("mis_regalos", []).filter(x => x.codigo !== m.codigo));
+        toast("Liberamos ese regalo para que otra persona pueda elegirlo.");
+        await cargarRegalos();
+      } catch { toast("No pudimos liberarlo. Inténtalo de nuevo."); ev.target.disabled = false; }
+    } }, "Ya no lo voy a regalar")
+  )));
+}
+
+/* ---------- Pañales: sugerencia opcional y balanceada por etapa ---------- */
+// Proporción deseada (debe coincidir con ETAPAS_PANAL en Codigo.gs; solo se usa en modo de prueba).
+const ETAPAS_PANAL = { "Etapa 2": 0.3, "Etapa 3": 0.4, "Etapa 4": 0.3 };
+let panales = { conteo: { "Etapa 2": 0, "Etapa 3": 0, "Etapa 4": 0 }, sugerida: "Etapa 3" };
+let etapaElegida = null;
+
+function pintarPanales() {
+  const mio = guardado.get("mi_panal", null);
+  $("#pan-elegir").hidden = !!mio;
+  $("#pan-listo").hidden = !mio;
+  if (mio) { $("#pan-etapa").textContent = mio.etapa.toLowerCase(); return; }
+  const actual = etapaElegida || panales.sugerida;
+  $("#pan-etapas").replaceChildren(...Object.keys(panales.conteo).map(e => {
+    const n = panales.conteo[e];
+    return el("button", {
+      class: "etapa" + (e === panales.sugerida ? " sug" : ""), type: "button", "aria-pressed": String(e === actual),
+      onclick: () => { etapaElegida = e; pintarPanales(); }
+    }, e === panales.sugerida ? el("span", { class: "tag" }, "Sugerida") : null, e,
+      el("small", {}, n === 0 ? "nadie aún" : n === 1 ? "la lleva 1 persona" : "la llevan " + n));
+  }));
+  $("#pan-ok").textContent = "Sí, llevo pañales " + actual.toLowerCase();
+  $("#pan-nombre").hidden = !!nombreInvitado();
+}
+
+$("#pan-ok").addEventListener("click", async () => {
+  const conocido = nombreInvitado();
+  const invitado = conocido || $("#pan-nombre").value.trim();
+  const msg = $("#pan-msg");
+  if (invitado.length < 2) { msg.textContent = "Escribe tu nombre para anotarte."; msg.className = "form-msg err"; $("#pan-nombre").focus(); return; }
+  const etapa = etapaElegida || panales.sugerida;
+  const btn = $("#pan-ok"); btn.disabled = true; msg.className = "form-msg"; msg.textContent = "Anotando…";
+  try {
+    const r = await api("panal", { etapa, invitado });
+    if (!r.ok) throw new Error(r.error);
+    guardado.set("mi_panal", { codigo: r.codigo, etapa });
+    msg.textContent = ""; etapaElegida = null;
+    toast("¡Gracias! Anotamos tus pañales " + etapa.toLowerCase() + ".");
+    await cargarRegalos();
+  } catch { msg.textContent = "No pudimos anotarlo. Inténtalo de nuevo."; msg.className = "form-msg err"; }
+  finally { btn.disabled = false; }
+});
+
+$("#pan-quitar").addEventListener("click", async (ev) => {
+  const mio = guardado.get("mi_panal", null); if (!mio) return;
+  ev.target.disabled = true;
+  try {
+    await api("cancelPanal", { codigo: mio.codigo });
+    guardado.set("mi_panal", null);
+    toast("Listo, quitamos tus pañales de la lista. ¡Igual te esperamos!");
+    await cargarRegalos();
+  } catch { toast("No pudimos quitarlo. Inténtalo de nuevo."); }
+  finally { ev.target.disabled = false; }
+});
+
+async function cargarRegalos() {
+  try {
+    const r = await api("gifts");
+    if (!r.ok) throw new Error(r.error);
+    regalos = r.gifts;
+    if (r.panales) panales = r.panales;
+    pintarTabs(); pintarRegalos(); pintarMios(); pintarPanales();
+  } catch {
+    $("#gifts").replaceChildren(el("p", { class: "loading" }, "No pudimos cargar la lista. Recarga la página en un momento."));
+  }
+}
+
+/* ---------- Paso 3: enlaces ---------- */
+function enlaces() {
+  const q = encodeURIComponent(EVENTO.direccion);
+  $("#maps").href = "https://www.google.com/maps/search/?api=1&query=" + q;
+  $("#waze").href = "https://waze.com/ul?q=" + q + "&navigate=yes";
+  const det = encodeURIComponent("Baby shower de Benjamin. Con cariño, Pau y Cris.");
+  $("#cal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" +
+    encodeURIComponent("Baby shower de Benjamin") + "&dates=20261213T193000Z/20261213T223000Z&details=" + det + "&location=" + q;
+}
+
+/* ---------- llave Bre-B ---------- */
+$("#copiar-llave").addEventListener("click", async () => {
+  const llave = $("#llave").textContent.trim();
+  try {
+    await navigator.clipboard.writeText(llave);
+    toast("Llave copiada: " + llave);
+  } catch {
+    const rango = document.createRange(); rango.selectNodeContents($("#llave"));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(rango);
+    toast("Llave seleccionada. Cópiala y pégala en tu banco.");
+  }
+});
+
+/* ---------- inicio ---------- */
+(function iniciar() {
+  if (!API_URL) $("#demo").hidden = false;
+  tick(); relojId = setInterval(tick, 1000);
+  enlaces();
+  const rsvp = guardado.get("rsvp", null);
+  if (rsvp) mostrarGracias(rsvp); else if (guardado.get("invitado", "")) mostrarRegreso(guardado.get("invitado", ""));
+  cargarRegalos();
+})();
+</script>
+</body>
+</html>

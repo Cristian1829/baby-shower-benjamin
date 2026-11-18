@@ -1,0 +1,9 @@
+CRÉDITOS
+========
+
+img/heroes.webp, img/heroes.jpg, img/compartir.jpg, img/cara-*.webp, img/escudo.webp
+  Ilustración generada con Figma AI (modelo gemini-3.1-flash-image) para esta invitación.
+  Los retratos redondos son recortes de esa misma ilustración.
+  Original en alta resolución: ../assets/ilustracion-ia/heroes-original.png (la versión anterior sin disfraces es selva-original.png)
+
+Tipografías: Baloo 2 y Nunito (Google Fonts, SIL Open Font License 1.1).
