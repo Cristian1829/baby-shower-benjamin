@@ -165,6 +165,8 @@ textarea{min-height:88px;resize:vertical}
 .etapas{display:flex;flex-wrap:wrap;gap:8px}
 .etapa{position:relative;border:2px solid var(--linea);background:#fff;color:var(--selva);border-radius:14px;padding:8px 12px;font-weight:800;font-size:15px;cursor:pointer;text-align:left;line-height:1.15}
 .etapa small{display:block;font-weight:600;font-size:11px;color:var(--suave)}
+.etapa .kg{display:block;font-weight:700;font-size:12px;color:var(--hoja);margin-top:1px}
+.etapa[aria-pressed=true] .kg{color:#fff}
 .etapa.sug{border-color:var(--banano)}
 .etapa .tag{position:absolute;top:-9px;right:8px;background:var(--banano);color:var(--selva);font:800 9px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:3px 6px;border-radius:99px}
 .etapa[aria-pressed=true]{background:var(--hoja);border-color:var(--hoja);color:#fff}
@@ -339,7 +341,7 @@ footer img{width:60px;margin:0 auto}
       <div class="pan-body">
         <span class="pan-k">Una idea, solo si te nace</span>
         <h3>¿Nos ayudas con un paquete de pañales?</h3>
-        <p><span class="nb" data-real="Benjamin">Nuestro bebé</span> va a usar muchísimos, así que un paquete de pañales siempre nos va a caer de maravilla, junto con tu regalo o en lugar de él. No es ningún compromiso: lo que más queremos es que vengas.</p>
+        <p><span class="nb" data-real="Benjamin">Nuestro bebé</span> va a usar muchísimos, así que un paquete de pañales siempre nos va a caer de maravilla, junto con tu regalo o en lugar de él. Y si quieres acompañarlo con un paquete de toallitas húmedas, ¡mejor todavía! No es ningún compromiso: lo que más queremos es que vengas.</p>
 
         <div id="pan-elegir">
           <p class="pan-tip">Para que no lleguen todos de la misma talla, te sugerimos la etapa marcada. Si prefieres otra, elígela sin problema.</p>
@@ -353,7 +355,7 @@ footer img{width:60px;margin:0 auto}
 
         <div class="pan-listo" id="pan-listo" hidden>
           <p><strong>¡Mil gracias!</strong> Anotamos que llevas pañales <strong id="pan-etapa"></strong>.</p>
-          <button class="btn-link" type="button" id="pan-quitar">Ya no los voy a llevar</button>
+          <button class="btn-link" type="button" id="pan-quitar">Cambiar o cancelar mi elección</button>
         </div>
       </div>
     </div>
@@ -750,6 +752,8 @@ function pintarMios() {
 /* ---------- Pañales: sugerencia opcional y balanceada por etapa ---------- */
 // Proporción deseada (debe coincidir con ETAPAS_PANAL en Codigo.gs; solo se usa en modo de prueba).
 const ETAPAS_PANAL = { "Etapa 2": 0.3, "Etapa 3": 0.4, "Etapa 4": 0.3 };
+// Peso aproximado de cada etapa, para quien no sepa cuál comprar.
+const PESO_ETAPA = { "Etapa 2": "5 a 7.5 kg", "Etapa 3": "7 a 10 kg", "Etapa 4": "9.5 a 12.5 kg" };
 let panales = { conteo: { "Etapa 2": 0, "Etapa 3": 0, "Etapa 4": 0 }, sugerida: "Etapa 3" };
 let etapaElegida = null;
 
@@ -769,6 +773,7 @@ function pintarPanales() {
       class: "etapa" + (etiqueta ? " sug" : ""), type: "button", "aria-pressed": String(e === actual), disabled: !!mio,
       onclick: () => { etapaElegida = e; pintarPanales(); }
     }, etiqueta ? el("span", { class: "tag" }, etiqueta) : null, e,
+      el("span", { class: "kg" }, PESO_ETAPA[e] || ""),
       el("small", {}, n === 0 ? "nadie aún" : n === 1 ? "1 seleccionado" : n + " seleccionados"));
   }));
   $("#pan-ok").textContent = "Sí, llevo pañales " + actual.toLowerCase();
