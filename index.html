@@ -118,6 +118,9 @@ textarea{min-height:88px;resize:vertical}
 .form-msg{font-weight:700;min-height:1.4em}
 .form-msg.err{color:#b23b2a}
 
+.calma{max-width:34ch;margin:16px auto 0;font-size:15px;color:var(--tinta);background:rgba(255,253,245,.75);border-radius:14px;padding:10px 14px}
+.calma strong{color:var(--selva)}
+.tip-calma{margin-top:12px;background:#fff6d9;border-left:4px solid var(--banano);border-radius:10px;padding:10px 14px;font-size:15px;font-weight:600;color:var(--selva);max-width:62ch}
 .volver{margin-top:10px;font-size:15px}
 .volver-box{margin-top:14px;background:#eef7e8;border-radius:16px;padding:14px;display:grid;gap:8px}
 .volver-box label{margin:0}
@@ -215,6 +218,7 @@ footer img{width:60px;margin:0 auto}
       <a class="btn btn-main" href="#confirmar">Confirmar asistencia</a>
       <a class="btn btn-soft" href="#regalos">Ver lista de regalos</a>
     </div>
+    <p class="calma"><strong>Sin afanes:</strong> primero confírmanos si vienes, y el regalo lo puedes decidir después, con calma, desde este mismo enlace.</p>
   </div>
 </header>
 
@@ -237,7 +241,8 @@ footer img{width:60px;margin:0 auto}
       <img class="face" src="img/cara-elefante.webp" alt="">
       <div><div class="step-num">Paso 1 de 3</div><h2>¿Nos acompañas?</h2></div>
     </div>
-    <p class="intro">Confírmanos tu asistencia, así preparamos todo con mucho amor y alcanza para todos. Te toma un minuto, y el regalo lo puedes elegir después.</p>
+    <p class="intro">Confírmanos tu asistencia, así preparamos todo con mucho amor y alcanza para todos. Te toma un minuto.</p>
+    <p class="tip-calma">Puedes confirmar ahora y elegir el regalo otro día: vuelve a este enlace cuando lo tengas claro.</p>
     <p class="volver" id="volver-wrap"><button class="btn-link" type="button" id="volver">¿Ya confirmaste antes? Solo quiero elegir mi regalo</button></p>
     <div class="volver-box" id="volver-box" hidden>
       <label for="v-nombre">¿Con qué nombre confirmaste?</label>
