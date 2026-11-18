@@ -169,6 +169,8 @@ textarea{min-height:88px;resize:vertical}
 .etapa .tag{position:absolute;top:-9px;right:8px;background:var(--banano);color:var(--selva);font:800 9px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:3px 6px;border-radius:99px}
 .etapa[aria-pressed=true]{background:var(--hoja);border-color:var(--hoja);color:#fff}
 .etapa[aria-pressed=true] small{color:#eaf5e4}
+.etapa:disabled{cursor:default}
+.etapa:disabled:not([aria-pressed=true]){opacity:.75}
 .pan-acts{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .pan-acts .btn{padding:11px 18px;font-size:15px}
 .pan-listo{display:grid;gap:6px;justify-items:start}
@@ -753,20 +755,24 @@ let etapaElegida = null;
 
 function pintarPanales() {
   const mio = guardado.get("mi_panal", null);
-  $("#pan-elegir").hidden = !!mio;
+  // Las etapas y su conteo se ven siempre; varias personas pueden elegir la misma etapa.
+  $("#pan-elegir").hidden = false;
   $("#pan-listo").hidden = !mio;
-  if (mio) { $("#pan-etapa").textContent = mio.etapa.toLowerCase(); return; }
-  const actual = etapaElegida || panales.sugerida;
+  document.querySelector("#pan-elegir .pan-tip").hidden = !!mio;
+  document.querySelector("#pan-elegir .pan-acts").hidden = !!mio;
+  if (mio) $("#pan-etapa").textContent = mio.etapa.toLowerCase();
+  const actual = mio ? mio.etapa : (etapaElegida || panales.sugerida);
   $("#pan-etapas").replaceChildren(...Object.keys(panales.conteo).map(e => {
     const n = panales.conteo[e];
+    const etiqueta = mio ? (e === mio.etapa ? "Tu elección" : null) : (e === panales.sugerida ? "Sugerida" : null);
     return el("button", {
-      class: "etapa" + (e === panales.sugerida ? " sug" : ""), type: "button", "aria-pressed": String(e === actual),
+      class: "etapa" + (etiqueta ? " sug" : ""), type: "button", "aria-pressed": String(e === actual), disabled: !!mio,
       onclick: () => { etapaElegida = e; pintarPanales(); }
-    }, e === panales.sugerida ? el("span", { class: "tag" }, "Sugerida") : null, e,
-      el("small", {}, n === 0 ? "nadie aún" : n === 1 ? "la lleva 1 persona" : "la llevan " + n));
+    }, etiqueta ? el("span", { class: "tag" }, etiqueta) : null, e,
+      el("small", {}, n === 0 ? "nadie aún" : n === 1 ? "1 seleccionado" : n + " seleccionados"));
   }));
   $("#pan-ok").textContent = "Sí, llevo pañales " + actual.toLowerCase();
-  $("#pan-nombre").hidden = !!nombreInvitado();
+  $("#pan-nombre").hidden = !!mio || !!nombreInvitado();
 }
 
 $("#pan-ok").addEventListener("click", async () => {
