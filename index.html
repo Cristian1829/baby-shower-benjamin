@@ -136,6 +136,19 @@ textarea{min-height:88px;resize:vertical}
 .rev-sub{font:800 clamp(24px,6.5vw,46px)/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.08em;color:#fff}
 .rev-fecha{font-size:clamp(15px,3.8vw,18px);color:#d9f0d0}
 .rev-centro .btn{margin-top:14px}
+/* ---------- ¡Muchas gracias! al apartar ---------- */
+.gracias{position:fixed;inset:0;z-index:45;display:grid;place-items:center;background:rgba(20,56,38,.35);
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);cursor:pointer;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.gracias-card{position:relative;background:var(--papel);border-radius:28px;padding:26px 28px 22px;width:min(340px,100%);text-align:center;
+  box-shadow:0 20px 50px rgba(20,56,38,.35),0 0 0 4px #f5c64a;display:grid;justify-items:center;gap:6px}
+.gracias-img{width:84px;height:84px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px #fff,0 6px 16px rgba(20,56,38,.2);margin-top:-62px}
+.gracias-t{font:800 clamp(32px,9vw,40px)/1.05 var(--f-display);color:var(--papaya);white-space:nowrap}
+.gracias-t .l{display:inline-block}
+.gracias-regalo{font-weight:800;color:var(--selva);font-size:16px}
+.gracias-s{color:var(--suave);font-size:15px}
+.gracias-corazones{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.gracias-corazones span{position:absolute;bottom:30%;font-size:22px;opacity:0}
 .calma{max-width:34ch;margin:16px auto 0;font-size:15px;color:var(--tinta);background:rgba(255,253,245,.75);border-radius:14px;padding:10px 14px}
 .calma strong{color:var(--selva)}
 .tip-calma{margin-top:12px;background:#fff6d9;border-left:4px solid var(--banano);border-radius:10px;padding:10px 14px;font-size:15px;font-weight:600;color:var(--selva);max-width:62ch}
@@ -411,6 +424,16 @@ footer img{width:60px;margin:0 auto}
 
 <div class="demo" id="demo" hidden>Modo de prueba: los datos se guardan solo en este navegador</div>
 <div class="toast" id="toast" role="status" hidden></div>
+
+<div class="gracias" id="gracias" role="status" aria-live="polite" hidden>
+  <div class="gracias-card" id="gracias-card">
+    <div class="gracias-corazones" id="gracias-corazones" aria-hidden="true"></div>
+    <img class="gracias-img" id="gracias-img" src="img/cara-mono.webp" alt="">
+    <p class="gracias-t" id="gracias-t" aria-label="¡Muchas gracias!"></p>
+    <p class="gracias-regalo" id="gracias-regalo"></p>
+    <p class="gracias-s" id="gracias-s"></p>
+  </div>
+</div>
 
 <div class="revelar" id="revelar" role="dialog" aria-modal="true" aria-label="Revelación del nombre" hidden>
   <div class="rev-rayos" id="rev-rayos" aria-hidden="true"></div>
@@ -720,7 +743,7 @@ function cajaConfirmar(t, unica) {
       mios.push({ codigo: r.codigo, id: t.id, regalo: t.regalo, talla: t.talla });
       guardado.set("mis_regalos", mios);
       seleccion = null;
-      toast("¡Listo! Apartaste " + t.regalo + (unica ? "" : " talla " + t.talla) + ". Gracias por consentir " + nb("a " + NOMBRE, "al bebé") + ".");
+      agradecer((unica ? t.regalo : t.regalo + " · talla " + t.talla), "Gracias por consentir " + nb("a " + NOMBRE, "al bebé") + " 💚");
       await cargarRegalos();
     } catch { msg.textContent = "Sin conexión. Inténtalo de nuevo."; msg.className = "form-msg err"; ok.disabled = false; }
   } }, "Sí, yo lo regalo");
@@ -792,7 +815,7 @@ $("#pan-ok").addEventListener("click", async () => {
     if (!r.ok) throw new Error(r.error);
     guardado.set("mi_panal", { codigo: r.codigo, etapa });
     msg.textContent = ""; etapaElegida = null;
-    toast("¡Gracias! Anotamos tus pañales " + etapa.toLowerCase() + ".");
+    agradecer("Pañales " + etapa.toLowerCase(), "¡" + nb(NOMBRE, "El bebé") + " te lo agradece mucho! 💚");
     await cargarRegalos();
   } catch { msg.textContent = "No pudimos anotarlo. Inténtalo de nuevo."; msg.className = "form-msg err"; }
   finally { btn.disabled = false; }
@@ -933,6 +956,46 @@ function animarRevelacion() {
   gsap.to("#rev-rayos", { rotation: 360, duration: 24, ease: "none", repeat: -1 });
   setTimeout(() => { if (tl.progress() < 1) tl.progress(1); }, 8000); // si el navegador congeló la animación, mostrar el final
   return new Promise(r => tl.eventCallback("onComplete", r));
+}
+
+/* ---------- ¡Muchas gracias! (al apartar un regalo o pañales) ---------- */
+const CARAS = ["cara-mono", "cara-jirafa", "cara-elefante", "cara-tortuga", "cara-loro", "cara-leon"];
+let graciasTimer = null;
+function agradecer(regalo, sub) {
+  const ov = $("#gracias");
+  $("#gracias-img").src = "img/" + CARAS[Math.floor(Math.random() * CARAS.length)] + ".webp";
+  $("#gracias-regalo").textContent = regalo;
+  $("#gracias-s").textContent = sub;
+  $("#gracias-t").replaceChildren(...[..."¡Muchas gracias!"].map(c => el("span", { class: "l" }, c === " " ? " " : c)));
+  $("#gracias-corazones").replaceChildren(...Array.from({ length: 9 }, (_, i) =>
+    el("span", { style: "left:" + (8 + i * 10.5) + "%" }, ["💚", "💛", "🧡"][i % 3])));
+  ov.hidden = false;
+  const cerrar = () => {
+    clearTimeout(graciasTimer);
+    if (window.gsap && !reducido()) gsap.to(ov, { opacity: 0, duration: .3, onComplete: () => { ov.hidden = true; gsap.set(ov, { opacity: 1 }); } });
+    else ov.hidden = true;
+    setTimeout(() => { ov.hidden = true; ov.style.opacity = ""; }, 400);
+  };
+  ov.onclick = cerrar;
+  clearTimeout(graciasTimer);
+  graciasTimer = setTimeout(cerrar, 3200);
+
+  if (!window.gsap || reducido()) return;
+  const letras = ov.querySelectorAll("#gracias-t .l");
+  gsap.timeline()
+    .fromTo(ov, { opacity: 0 }, { opacity: 1, duration: .2 })
+    .fromTo("#gracias-card", { scale: .6, y: 40, rotation: -4 }, { scale: 1, y: 0, rotation: 0, duration: .55, ease: "back.out(2)" }, "<")
+    .fromTo("#gracias-img", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: .5, ease: "back.out(2.6)" }, "-=.3")
+    .fromTo(letras, { opacity: 0, y: 26, scale: .4 }, { opacity: 1, y: 0, scale: 1, duration: .4, ease: "back.out(3)", stagger: .035 }, "-=.25")
+    .add(() => {
+      const r = $("#gracias-card").getBoundingClientRect();
+      confeti({ particleCount: 70, spread: 80, startVelocity: 32, scalar: .9, origin: { x: (r.left + r.width / 2) / innerWidth, y: (r.top + 30) / innerHeight } });
+    }, "-=.2")
+    .fromTo(["#gracias-regalo", "#gracias-s"], { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .35, stagger: .1 }, "-=.15")
+    .fromTo("#gracias-corazones span", { opacity: 0, y: 0, scale: .5 },
+      { opacity: 1, y: () => -gsap.utils.random(90, 170), x: () => gsap.utils.random(-25, 25), scale: 1, duration: 1.4, ease: "power1.out", stagger: .07 }, "-=.5")
+    .to("#gracias-corazones span", { opacity: 0, duration: .5, stagger: .05 }, "-=.6")
+    .to("#gracias-img", { rotation: 8, yoyo: true, repeat: 3, duration: .15, ease: "sine.inOut" }, "-=1.2");
 }
 
 /* ---------- inicio ---------- */
